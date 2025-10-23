@@ -1,50 +1,38 @@
-function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-}
+let isKeyDown = false; 
 
-// New function
+// Play sound function
+function playSound(e) {
+
+  //Something weird I noticed, e.keycode exists and I can select the audio to play using it, but cant console.log it
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const keyElement = document.querySelector(`div[data-key="${e.keyCode}"]`);
+  if (!audio) {
+    console.log("Audio element was null, returning...")
+    return;
+  }
+  //Prevents duplicating play event repeatedly on keyhold
+  if (isKeyDown) {
+    return;
+  }
+  keyElement.classList.add('playing');
+  
+  audio.currentTime = 0;
+  audio.play();
+  console.log("Playing: " + audio.getAttribute("src"))
+  isKeyDown = true;
+}
 function stopSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    if (!audio) return;
-
-    audio.pause();
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const keyElement = document.querySelector(`div[data-key="${e.keyCode}"]`);
+  if (!audio) {
+    console.log("Audio element was null, returning...")
+    return;
+  }
+  console.log(keyElement);
+  keyElement.classList.remove('playing');
+  audio.pause();
+  isKeyDown = false;
 }
 
-// New play sound function that supports modulation
-function modulateSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const audioSrc = document.querySelector(`audio[data-key="${e.keyCode}"]`).getAttribute("src");
-    let noteName;
-    let octave;
-    if (!audio) return;
-    //audio file path is like sounds/X#.wav
-    if (audioSrc.length == 13) {noteName = audioSrc.substring(7, 8);
-        octave = audioSrc.substring(8, 9);
-    }
-    if (audioSrc.length == 14) {noteName = audioSrc.substring(7, 9);
-        octave = audioSrc.substring(9, 11);
-    }
-    if (e.key === 'ShiftLeft') {
-        audioSrc = `sounds/${noteName + (octave - 1)}.wav`;
-        alert(audioSrc + " and " + noteName + octave);
-        audio.play();
-    }
-    if (e.key === 'ShiftRight') {
-        audioSrc = `sounds/${noteName + (octave + 1)}.wav`;
-        alert(audioSrc + " and " + noteName + octave);
-        audio.play();
-    }
-    else {
-        audio.src = `sounds/${noteName + octave}.wav`;
-        alert(audioSrc + " and " + noteName + octave);
-        audio.play();
-    }
-}
-
-const keys = Array.from(document.querySelectorAll('.all-keys'));
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-window.addEventListener('keydown', modulateSound);
-
-// Need sound to only stop on keyup
-window.addEventListener('keyup', stopSound);
+window.addEventListener('keydown', playSound);
+window.addEventListener('keyup', stopSound)
