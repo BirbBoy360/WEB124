@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Drum Kit to Piano</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!--Changed pad effects to keys, 
+    added all-keys class to reduce code reuse in index.css-->
+    <div class="keys">
+        <div data-key="65" class="all-keys white-key">
+            <kbd>A</kbd>
+            <span class="sound">C</span>
+        </div>
+        <div data-key="87" class="all-keys black-key">
+            <kbd>W</kbd>
+            <span class="sound">C# / Db</span>
+        </div>
+        <div data-key="83" class="all-keys white-key">
+            <kbd>S</kbd>
+            <span class="sound">D</span>
+        </div>
+        <div data-key="69" class="all-keys black-key">
+            <kbd>E</kbd>
+            <span class="sound">D# / Eb</span>
+        </div>
+        <div data-key="68" class="all-keys white-key">
+            <kbd>D</kbd>
+            <span class="sound">E</span>
+        </div>
+        <div data-key="70" class="all-keys white-key">
+            <kbd>F</kbd>
+            <span class="sound">F</span>
+        </div>
+        <div data-key="84" class="all-keys black-key">
+            <kbd>T</kbd>
+            <span class="sound">F# / Gb</span>
+        </div>
+        <div data-key="71" class="all-keys white-key">
+            <kbd>G</kbd>
+            <span class="sound">G</span>
+        </div>
+        <div data-key="89" class="all-keys black-key">
+            <kbd>Y</kbd>
+            <span class="sound">G# / Ab</span>
+        </div>
+        <div data-key="72" class="all-keys white-key">
+            <kbd>H</kbd>
+            <span class="sound">A</span>
+        </div>
+        <div data-key="85" class="all-keys black-key">
+            <kbd>U</kbd>
+            <span class="sound">A# / Bb</span>
+        </div>
+        <div data-key="74" class="all-keys white-key">
+            <kbd>J</kbd>
+            <span class="sound">B</span>
+        </div>
+        <div data-key="75" class="all-keys white-key">
+            <kbd>K</kbd>
+            <span class="sound">C</span>
+        </div>
+        <div data-key="79" class="all-keys black-key">
+            <kbd>O</kbd>
+            <span class="sound">C# / Db</span>
+        </div>
+        <div data-key="76" class="all-keys white-key">
+            <kbd>L</kbd>
+            <span class="sound">D</span>
+        </div>
+    </div>
+    <!--Changed sound files to piano notes
+    The 'S' stands for sharp and is for the black keys-->
+    <audio data-key="65" src="sounds/C4.wav"></audio>
+    <audio data-key="87" src="sounds/CS4.wav"></audio>
+    <audio data-key="83" src="sounds/D4.wav"></audio>
+    <audio data-key="69" src="sounds/DS4.wav"></audio>
+    <audio data-key="68" src="sounds/E4.wav"></audio>
+    <audio data-key="70" src="sounds/F4.wav"></audio>
+    <audio data-key="84" src="sounds/FS4.wav"></audio>
+    <audio data-key="71" src="sounds/G4.wav"></audio>
+    <audio data-key="89" src="sounds/GS4.wav"></audio>
+    <audio data-key="72" src="sounds/A4.wav"></audio>
+    <audio data-key="85" src="sounds/AS4.wav"></audio>
+    <audio data-key="74" src="sounds/B4.wav"></audio>
+    <audio data-key="75" src="sounds/C5.wav"></audio>
+    <audio data-key="79" src="sounds/CS5.wav"></audio>
+    <audio data-key="76" src="sounds/D5.wav"></audio>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
