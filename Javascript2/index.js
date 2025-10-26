@@ -1,3 +1,4 @@
+// Ryan Blackwell 10/26/25
 let isKeyDown = false; 
 
 // Function from original drum kit js
@@ -27,4 +28,5 @@ function playSound(e) {
 const keys = Array.from(document.querySelectorAll('.all-keys'));
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 window.addEventListener('keydown', playSound);
+
 window.addEventListener('keyup', function(e) {isKeyDown = false;} )
