@@ -1,3 +1,4 @@
+// Ryan Blackwell 10/26/25
 const smallCog = document.querySelector('.smallCog');
 const largeCog = document.querySelector('.largeCog');
 var smallDeg, largeDeg;
@@ -60,4 +61,5 @@ const seconds = getTime();
 
 //I did the code like this so it runs with less dependencies
 initializeCogs(seconds);
+
 setInterval(rotateCogs, 1000);
