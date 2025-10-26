@@ -1,3 +1,4 @@
+/* Ryan Blackwell 10/26/25 */
 html {
   background: #018DED;
   background-size: cover;
@@ -64,4 +65,5 @@ body {
 
 .instantTransmission {
   transition: none !important;
+
 }
