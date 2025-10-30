@@ -1,0 +1,113 @@
+/* Ryan Blackwell 10/27/25 */
+html {
+  box-sizing: border-box;
+  background-color: #AAA;
+  background-size: cover;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: block;
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+}
+
+.hero {
+  display: flex;
+  min-height: 62.5vh;
+  min-width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.image {
+  flex: 1 1 100%;
+  min-width: 100%;
+  min-height: 62.5vh;
+  text-shadow: 3px 3px 4px #000, -3px -3px 4px #000;
+  text-align: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: visible;
+}
+
+.prev,
+.next {
+  box-sizing: border-box;
+  position: fixed;
+  top: 12.5vh;
+  min-height: 50px;
+  min-width: 25px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .25);
+  transition: .5s ease-in-out;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: #FFF;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.infoBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 25vh;
+  font-size: 1.5rem;
+  background-color: #000;
+}
+
+.info {
+  width: 80%;
+  color: #FFF;
+}
+
+.sliderBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 12.25vh;
+  overflow: hidden;
+  color: #000;
+}
+
+.mini {
+  display: flex;
+  cursor: pointer;
+  flex: 1 1 auto;
+  text-align: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 10vh;
+  /* In previous assignments in past semesters I learned webkit-masking but I researched it more and for this application this is better */
+  clip-path: circle(2vh);
+  scale: .9;
+  filter: grayscale(50%) blur(2px);
+}
+
+.mini.active {
+  filter: none;
+  scale: 1;
+}
