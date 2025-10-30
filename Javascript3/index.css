@@ -1,0 +1,164 @@
+/* Ryan Blackwell */
+html {
+  box-sizing: border-box;
+  background: #405c00;
+  font-family: 'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  text-shadow: 1px 0 2px rgba(0, 0, 0, 1), 0 -1px 2px rgba(0, 0, 0, 1), -1px 0 2px rgba(0, 0, 0, 1), 0 -1px 2px rgba(0, 0, 0, 1),
+    0 0 10px rgba(0, 0, 0, 1);
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.info,
+.cycle {
+  min-height: 25%;
+  min-width: 25%;
+}
+
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel {
+  background: #000;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  align-items: center;
+  /* Safari transitionend event.propertyName === flex */
+  /* Chrome + FF transitionend event.propertyName === flex-grow */
+  transition:
+    font-size 1s cubic-bezier(0.61, -0.05, 0.7, -0.11),
+    flex 1s cubic-bezier(0.61, -0.05, 0.7, -0.11),
+    opacity 1s linear,
+    visibility 1s,
+    background 0.2s;
+  font-size: 15px;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* Required to make flex elements shrink properly, otherwise it defaults */
+  max-height: 100vh;
+}
+
+.heroPanel {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-color: #A00000;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  z-index: 2;
+  flex: 0 0 auto;
+}
+
+.heroPanel>.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.cycleHero,
+.infoHero,
+.removeHero {
+  flex: 0 0 auto;
+  width: 16.5%;
+}
+
+.buttons {
+  transform: translateY(0);
+}
+
+/* Flex Items */
+.panel>* {
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel>*:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.panel.open>*:nth-child(2) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.panel>*:nth-child(3) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.panel.open>*:nth-child(3) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.panel p {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.panel p:nth-child(2) {
+  font-size: 1em;
+}
+
+.panel>*:last-child {
+  font-size: 1em;
+  max-height: 50%;
+}
+
+.panel.open {
+  flex: 5;
+  /* makes them take up 5x space when open */
+  font-size: 20px;
+}
+
+.panel>*:first-child,
+.panel>*:nth-child(2),
+.panel>*:nth-child(3) {
+  height: 16.666%;
+  flex-grow: 0;
+}
+
+.down {
+  transform: translateY(300%);
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
