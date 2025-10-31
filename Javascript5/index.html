@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--Ryan Blackwell 10/28/25-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="flexContainer">
+      <div class="pseudoForm">
+        <label for="event" id="label">Select Event:</label>
+        <select id="event">
+          <option>Choose an Event:</option>
+          <option>Christmas</option>
+          <option>Halloween</option>
+          <option>Thanksgiving</option>
+          <option>New Year's</option>
+          <option>Mother's Day</option>
+          <option>4th of July</option>
+          <option>Valentine's Day</option>
+        </select>
+        <button type="button" class="addTimer">Add Countdown</button>
+      </div>
+      <div class="pseudoForm">
+        <label for="custom" id="label">Custom Date:</label>
+        <input type="date" id="custom">
+        <button type="button" class="addCustom">Add Countdown</button>
+      </div>
+    </div>
+  </div>
+  <div class="display"></div>
+  <script src="index.js"></script>
+</body>
+
+</html>

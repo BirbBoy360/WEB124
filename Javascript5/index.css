@@ -1,0 +1,94 @@
+/* Ryan Blackwell 10/28/25 */
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: #8E24AA;
+    background-image: url('background.png');
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+    display: block;
+}
+
+/* New */
+#wrapper {
+    margin: 1vh 0 0 0;
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.pseudoForm {
+    font-family: 'Inconsolata', monospace;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+}
+
+.pseudoForm>* {
+    height: 6rem;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 3rem;
+    padding: 1rem;
+    font-family: 'Inconsolata', monospace;
+}
+
+#label {
+    color: #000;
+    background: #FFF;
+    border-left: 3px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+}
+
+select, input {
+    color: #000;
+    background: #FFF;
+    border: none;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+    font-family: 'Inconsolata', monospace;
+}
+
+.addTimer, .addCustom {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.75);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+    border-right: 3px solid rgba(0, 0, 0, 1);
+}
+
+/* display container */
+.display {
+    display: flex;
+    flex-direction: column;
+}
+
+/* for new timers */
+.timer {
+    margin: 1.5rem 0 1.5rem 0;
+    height: 6rem;
+    font-size: 3rem;
+    vertical-align: middle;
+    align-items: center;
+    white-space: pre-line;
+    background-color: rgba(255, 255, 255, .7)
+}
+
+.removeBtn {
+    background-color: #000;
+    color: #FFF;
+    margin: 0 0 0 1rem;
+    transform: translateY(-.5rem);
+}
